@@ -309,6 +309,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.samsung
 
+# UDFPS Customization
+ifeq ($(TARGET_HAVE_FOD),true)
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+endif
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung
