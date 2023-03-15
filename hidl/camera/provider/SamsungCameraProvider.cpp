@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2023 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,9 +26,16 @@ using ::android::OK;
 const int kMaxCameraIdLen = 16;
 
 SamsungCameraProvider::SamsungCameraProvider() : LegacyCameraProviderImpl_2_5() {
-#ifndef EXYNOS9820_MODEL_beyond0lte
+#if !defined(EXYNOS9820_MODEL_beyond0lte) && !defined(EXYNOS9820_MODEL_f62)
     // ID=52 is telephoto
     mExtraIDs.push_back(52);
+#endif
+
+#ifdef EXYNOS9820_MODEL_f62
+   // ID=52 is depth camera
+   mExtraIDs.push_back(52);
+  // ID=54 is macro
+   mExtraIDs.push_back(54);
 #endif
 
     if (!mInitFailed) {
