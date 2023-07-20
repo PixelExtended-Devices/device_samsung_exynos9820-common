@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- PEX Maintainer -->
-    <string name="pex_maintainer_name" translatable="false">Fellipe O. Lima (Jubscleisson)</string>
+    <string name="pex_maintainer_name" translatable="false">Fellipe Lima (Jubscleisson)</string>
     <string name="pex_maintainer_group" translatable="false">https://t.me/pexbeyond</string>
 
 </resources>
